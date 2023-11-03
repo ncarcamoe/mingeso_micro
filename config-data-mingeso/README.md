@@ -4,7 +4,7 @@
 
 > gateway: 8080
 
-> eureka: 8761
+> eureka: 9090 // 8761
 
 > cuotas: 8083 
 
