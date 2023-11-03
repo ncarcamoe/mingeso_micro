@@ -1,6 +1,6 @@
 # config-data-mingeso
 
-> config: 8081
+> config: 9001 // 8081
 
 > gateway: 8080
 
