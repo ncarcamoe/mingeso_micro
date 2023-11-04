@@ -2,10 +2,10 @@
 
 > config: 9001 // 8081
 
-> gateway: 8080
+> gateway: 9000 // 8080
 
 > eureka: 9090 // 8761
 
-> cuotas: 8083 
+> cuotas: 9003 // 8083 
 
-> estudiantes: 8082
+> estudiantes: 9002 // 8082
