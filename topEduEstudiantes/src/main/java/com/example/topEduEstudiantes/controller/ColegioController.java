@@ -28,7 +28,7 @@ public class ColegioController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<ColegioEntity> findByRut(@PathVariable("id") Long id) {
+	public ResponseEntity<ColegioEntity> findById(@PathVariable("id") Long id) {
 		ColegioEntity colegioEntity = colegioService.findById(id);
 		return ResponseEntity.ok(colegioEntity);
 	}

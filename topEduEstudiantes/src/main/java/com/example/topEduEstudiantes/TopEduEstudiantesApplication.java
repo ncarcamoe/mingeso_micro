@@ -9,8 +9,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 public class TopEduEstudiantesApplication {
 
 	public static void main(String[] args) {
-
-		String entre = "";
 		SpringApplication.run(TopEduEstudiantesApplication.class, args);
 	}
 
