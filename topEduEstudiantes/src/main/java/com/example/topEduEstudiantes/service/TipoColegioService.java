@@ -1,10 +1,10 @@
-package tingeso_mingeso.backendestudiantesservice.service;
+package com.example.topEduEstudiantes.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tingeso_mingeso.backendestudiantesservice.entity.EstudianteEntity;
-import tingeso_mingeso.backendestudiantesservice.entity.TipoColegioEntity;
-import tingeso_mingeso.backendestudiantesservice.repository.TipoColegioRepository;
+import com.example.topEduEstudiantes.entity.EstudianteEntity;
+import com.example.topEduEstudiantes.entity.TipoColegioEntity;
+import com.example.topEduEstudiantes.repository.TipoColegioRepository;
 
 import java.util.ArrayList;
 import java.util.List;

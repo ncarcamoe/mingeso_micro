@@ -1,10 +1,10 @@
-package tingeso_mingeso.backendestudiantesservice.repository;
+package com.example.topEduEstudiantes.repository;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import tingeso_mingeso.backendestudiantesservice.entity.EstudianteEntity;
+import com.example.topEduEstudiantes.entity.EstudianteEntity;
 
 @Repository
 public interface EstudianteRepository extends CrudRepository<EstudianteEntity, Long> {

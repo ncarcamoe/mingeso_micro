@@ -1,22 +1,27 @@
 package tingeso_mingeso.backendestudiantesservice.entity;
 
+
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "tipoColegio")
+@Table(name = "colegio")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-public class TipoColegioEntity {
+public class ColegioEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idTipoColegio;
+    private Long idColegio;
 
-    private String descripcion;
-    private Short maximoCuotas;
-    private Short porcDescuento;
+    private String nombre;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_tipo_colegio")
+    private TipoColegioEntity tipoColegio;
+
+
 }

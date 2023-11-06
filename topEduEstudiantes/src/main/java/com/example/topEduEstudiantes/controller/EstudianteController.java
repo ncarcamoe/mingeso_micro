@@ -1,10 +1,10 @@
-package tingeso_mingeso.backendestudiantesservice.controller;
+package com.example.topEduEstudiantes.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import tingeso_mingeso.backendestudiantesservice.entity.EstudianteEntity;
-import tingeso_mingeso.backendestudiantesservice.service.EstudianteService;
+import com.example.topEduEstudiantes.entity.EstudianteEntity;
+import com.example.topEduEstudiantes.service.EstudianteService;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

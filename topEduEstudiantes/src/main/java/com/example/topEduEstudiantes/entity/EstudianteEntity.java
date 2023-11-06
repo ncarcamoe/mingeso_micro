@@ -1,10 +1,10 @@
-package tingeso_mingeso.backendestudiantesservice.entity;
+package com.example.topEduEstudiantes.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity

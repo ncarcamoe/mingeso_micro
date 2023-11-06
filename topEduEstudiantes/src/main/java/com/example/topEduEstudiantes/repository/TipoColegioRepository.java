@@ -1,7 +1,7 @@
-package tingeso_mingeso.backendestudiantesservice.repository;
+package com.example.topEduEstudiantes.repository;
 
 import org.springframework.data.repository.CrudRepository;
-import tingeso_mingeso.backendestudiantesservice.entity.TipoColegioEntity;
+import com.example.topEduEstudiantes.entity.TipoColegioEntity;
 
 public interface TipoColegioRepository extends CrudRepository<TipoColegioEntity, Long> {
 }

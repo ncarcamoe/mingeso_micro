@@ -1,4 +1,4 @@
-package tingeso_mingeso.backendestudiantesservice;
+package com.example.topEduEstudiantes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,12 +6,12 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class BackendEstudiantesServiceApplication {
+public class TopEduEstudiantesApplication {
 
 	public static void main(String[] args) {
 
 		String entre = "";
-		SpringApplication.run(BackendEstudiantesServiceApplication.class, args);
+		SpringApplication.run(TopEduEstudiantesApplication.class, args);
 	}
 
 }
