@@ -30,7 +30,13 @@ spring:
           uri: lb://topEduEstudiantes
           predicates:
             - Path=/estudiante/**
+        - id: topEduEstudiantes-tipoColegio
+          uri: lb://topEduEstudiantes
+          predicates:
             - Path=/tipoColegio/**
+        - id: topEduEstudiantes-colegio
+          uri: lb://topEduEstudiantes
+          predicates:
             - Path=/colegio/**
 #        - id: backend-cuotas-service
 #          uri: lb://backend-cuotas-service
