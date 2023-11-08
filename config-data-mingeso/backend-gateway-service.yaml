@@ -26,7 +26,7 @@ spring:
             allowed-headers: "*"
             allow-credentials: true
       routes:
-        - id: topEduEstudiantes-estudiante
+        - id: topEduEstudiantes
           uri: lb://topEduEstudiantes
           predicates:
             - Path=/estudiante/**
