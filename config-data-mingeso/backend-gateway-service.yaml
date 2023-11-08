@@ -27,11 +27,11 @@ spring:
             allow-credentials: true
       routes:
         - id: topEduEstudiantes-estudiante
-          uri: lb://backend-estudiantes-service
+          uri: lb://topEduEstudiantes
           predicates:
             - Path=/estudiante/**
         - id: topEduEstudiantes-tipoColegio
-          uri: lb://backend-estudiantes-service
+          uri: lb://topEduEstudiantes
           predicates:
             - Path=/tipoColegio/**
 #        - id: backend-cuotas-service
