@@ -25,4 +25,8 @@ public class EstudianteService {
         return estudianteRepository.findByRut(rut);
     }
 
+    public EstudianteEntity findByIdEstudiante(Long idEstudiante){
+        return estudianteRepository.findByIdEstudiante(idEstudiante);
+    }
+
 }

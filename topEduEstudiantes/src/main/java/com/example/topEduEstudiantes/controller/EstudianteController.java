@@ -33,4 +33,10 @@ public class EstudianteController {
         EstudianteEntity estudianteEntity = estudianteService.findByRut(rut);
         return ResponseEntity.ok(estudianteEntity);
     }
+
+    @GetMapping("/{idEstudiante}")
+    public ResponseEntity<EstudianteEntity> findByIdEstudiante(@PathVariable("idEstudiante") Long idEstudiante) {
+        EstudianteEntity estudianteEntity = estudianteService.findByIdEstudiante(idEstudiante);
+        return ResponseEntity.ok(estudianteEntity);
+    }
 }

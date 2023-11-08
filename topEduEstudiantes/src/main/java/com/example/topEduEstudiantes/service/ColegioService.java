@@ -13,6 +13,9 @@ public class ColegioService {
     @Autowired
     ColegioRepository colegioRepository;
 
+    @Autowired
+    TipoColegioService tipoColegioService;
+
     public ColegioEntity guardar(ColegioEntity colegioEntity){
         return colegioRepository.save(colegioEntity);
     }

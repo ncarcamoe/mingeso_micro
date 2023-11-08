@@ -4,20 +4,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import java.time.LocalDate;
+import java.util.Date;
 
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 public class EstudianteEntity {
+    private Long idEstudiante;
     private String rut;
-    private String nombres;
-    private String apellidos;
-    private LocalDate fecha_nacimiento;
-    private int tipo_colegio;
-    private String nombre_colegio;
-    private LocalDate anio_egreso;
-    private LocalDate anio_ingreso;
+    private String nombre;
+    private String email;
+    private String apellidoPrimario;
+    private String apellidoSecundario;
+    private Date fechaNacimiento;
+    private Short anioEgreso;
+    private ColegioEntity colegio;
 }

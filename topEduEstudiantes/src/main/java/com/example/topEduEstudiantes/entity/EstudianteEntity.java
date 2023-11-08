@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "estudiante")
+@Table(name = "estudiantes")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -25,7 +25,7 @@ public class EstudianteEntity {
     private Date fechaNacimiento;
     private Short anioEgreso;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_colegio")
     private ColegioEntity colegio;
 

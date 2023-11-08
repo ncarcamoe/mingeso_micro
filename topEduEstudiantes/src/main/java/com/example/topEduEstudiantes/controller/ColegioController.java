@@ -1,5 +1,6 @@
 package com.example.topEduEstudiantes.controller;
 
+import com.example.topEduEstudiantes.service.TipoColegioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,9 @@ import java.util.List;
 public class ColegioController {
     @Autowired
 	ColegioService colegioService;
+
+	@Autowired
+	TipoColegioService tipoColegioService;
 
 	@PostMapping()
 	public ResponseEntity<ColegioEntity> crear(@RequestBody ColegioEntity colegio) {

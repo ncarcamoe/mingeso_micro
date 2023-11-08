@@ -10,4 +10,7 @@ import com.example.topEduEstudiantes.entity.EstudianteEntity;
 public interface EstudianteRepository extends CrudRepository<EstudianteEntity, Long> {
     @Query("select e from EstudianteEntity e where e.rut = :rut")
     EstudianteEntity findByRut(@Param("rut") String rut);
+
+    @Query("select e from EstudianteEntity e where e.idEstudiante = :idEstudiante")
+    EstudianteEntity findByIdEstudiante(@Param("idEstudiante") Long idEstudiante);
 }
