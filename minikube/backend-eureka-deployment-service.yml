@@ -21,7 +21,7 @@ spec:
             - containerPort: 9001
           env:
             - name: SPRING_CLOUD_CONFIG_URI
-              value: http://configService:9001
+              value: http://config-service:9001
 ---
 apiVersion: v1
 kind: Service

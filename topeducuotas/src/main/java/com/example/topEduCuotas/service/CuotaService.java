@@ -1,5 +1,6 @@
 package com.example.topEduCuotas.service;
 
+import com.example.topEduCuotas.entity.ArancelEntity;
 import com.example.topEduCuotas.entity.CuotaEntity;
 import com.example.topEduCuotas.model.EstudianteEntity;
 import com.example.topEduCuotas.repository.CuotaRepository;
@@ -20,6 +21,9 @@ import java.util.Optional;
 public class CuotaService {
     @Autowired
     CuotaRepository cuotaRepository;
+
+    @Autowired
+    ArancelService arancelService;
 
     @Autowired
     RestTemplate restTemplate;
@@ -103,7 +107,7 @@ public class CuotaService {
     public EstudianteEntity findByIdEstudiante(Long id){
         System.out.println("idEstudiante: "+id);
         ResponseEntity<EstudianteEntity> response = restTemplate.exchange(
-                "http://localhost:9000/estudiante/"+id,
+                "http://localhost:9000/estudiante/id/"+id,
                 HttpMethod.GET,
                 null,
                 new ParameterizedTypeReference<EstudianteEntity>() {}

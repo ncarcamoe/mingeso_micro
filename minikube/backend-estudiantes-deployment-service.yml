@@ -21,9 +21,9 @@ spec:
             - containerPort: 9001
           env:
             - name: SPRING_CLOUD_CONFIG_URI
-              value: http://configService:9001
+              value: http://config-service:9001
             - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
-              value: http://eurekaService:8761
+              value: http://eureka-service:8761
             - name: eureka.instance.preferIpAddress
               value: "true"
             - name: POSTGRES_DB_HOST

@@ -17,8 +17,8 @@ spring:
     plataform: postgres
     driver-class-name: org.postgresql.Driver
     dbname: topeduestudiantes
-    #url: jdbc:postgresql://localhost:5432/topEducationEstudiantes
-    url: jdbc:postgresql://localhost:8090/topeduestudiantes
+    url: jdbc:postgresql://localhost:5432/topeduestudiantes
+    #url: jdbc:postgresql://localhost:8090/topeduestudiantes
     username: postgres
     password: usach2023
   servlet:

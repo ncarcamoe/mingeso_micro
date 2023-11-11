@@ -1,17 +1,18 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: postgres-persistent-volume-claim
+  name: postgres-persistent-volume
   labels:
-      type: local
+    type: local
 spec:
   storageClassName: manual
   capacity:
-      storage: 1Gi
+    storage: 1Gi
   accessModes:
-      - ReadWriteOnce
-  hostPath:
-      path: "/Users/nayxx/docker/postgres/docker-pg-vol/data"
+    - ReadWriteOnce  
+  gcePersistentDisk:
+    pdName: metodosingcluster
+    fsType: ext4
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -22,7 +23,7 @@ metadata:
     tier: database
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteOnce    
   resources:
     requests:
       storage: 1Gi 
@@ -77,6 +78,8 @@ spec:
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: db-data
+      securityContext:
+        runAsUser: null  # Eliminado runAsUser: 0 para usar el valor predeterminado (root)              
       volumes:
         - name: db-data
           persistentVolumeClaim:

@@ -1,5 +1,6 @@
 package com.example.topEduCuotas.controller;
 
+import com.example.topEduCuotas.entity.ArancelEntity;
 import com.example.topEduCuotas.entity.CuotaEntity;
 import com.example.topEduCuotas.service.ArancelService;
 import com.example.topEduCuotas.service.CuotaService;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/cuotas")
+@RequestMapping("/cuota")
 public class CuotaController {
     @Autowired
     CuotaService cuotaService;
@@ -21,7 +22,8 @@ public class CuotaController {
 
     @PostMapping()
     public ResponseEntity<List<CuotaEntity>> guardar(@RequestBody CuotaEntity cuotaEntity){
-        cuotaEntity.setArancel(arancelService.findById(cuotaEntity.getArancel().getIdArancel()));
+        ArancelEntity arancel = arancelService.findById(cuotaEntity.getArancel().getIdArancel());
+        cuotaEntity.setArancel(arancel);
         return ResponseEntity.ok(cuotaService.generarCuotas(cuotaEntity));
     }
 
