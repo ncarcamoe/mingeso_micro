@@ -38,3 +38,11 @@ spring:
           uri: lb://topeduestudiantes
           predicates:
             - Path=/colegio/**
+        - id: topeducuotas-arancel
+          uri: lb://topeducuotas
+          predicates:
+            - Path=/arancel/**
+        - id: topeducuotas-cuota
+          uri: lb://topeducuotas
+          predicates:
+            - Path=/cuota/**
