@@ -50,9 +50,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-cuotas-service
+  name: topeducuotas
   labels:
-    app: backend-cuotas-service
+    app: topeducuotas
 spec:
   selector:
     app: backend-cuotas-deployment

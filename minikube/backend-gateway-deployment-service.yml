@@ -30,9 +30,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: gatewayService
+  name: gateway-service
   labels:
-    app: gatewayService
+    app: gateway-service
 spec:
   selector:
     app: backend-gateway-deployment

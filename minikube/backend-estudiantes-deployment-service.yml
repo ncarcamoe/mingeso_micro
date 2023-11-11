@@ -50,9 +50,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: topEduEstudiantes
+  name: topeduestudiantes
   labels:
-    app: topEduEstudiantes
+    app: topeduestudiantes
 spec:
   selector:
     app: backend-estudiantes-deployment

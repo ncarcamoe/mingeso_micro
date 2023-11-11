@@ -1,40 +1,40 @@
 D:
-cd '.\Simon\progra\Tingeso-Mingeso\Mingeso-Tingeso-Ayudantia\Unidad 2\Aplicación-kubernetes-postgresql\'
+cd \USACH\Metodos Ing Software\Microservicio\mingeso_micro
 
-cd backend-config-service
+cd configService
 mvn clean install -DskipTests=True
-docker build -t simonsaez/topeducation-config-postgres .
-docker push simonsaez/topeducation-config-postgres
-cd ../
+docker build -t ncarcamo/topeducation-config-postgres .
+docker push ncarcamo/topeducation-config-postgres
+cd..
 
-cd backend-eureka-service
+cd eurekaService
 mvn clean install -DskipTests=True
-docker build -t simonsaez/topeducation-eureka-postgres .
-docker push simonsaez/topeducation-eureka-postgres
-cd ../
+docker build -t ncarcamo/topeducation-eureka-postgres .
+docker push ncarcamo/topeducation-eureka-postgres
+cd..
 
-cd backend-gateway-service
+cd gatewayService
 mvn clean install -DskipTests=True
-docker build -t simonsaez/topeducation-gateway-postgres .
-docker push simonsaez/topeducation-gateway-postgres
-cd ../
+docker build -t ncarcamo/topeducation-gateway-postgres .
+docker push ncarcamo/topeducation-gateway-postgres
+cd..
 
-cd backend-estudiantes-service
+cd topEduEstudiantes
 mvn clean install -DskipTests=True
-docker build -t simonsaez/topeducation-estudiantes-postgres .
-docker push simonsaez/topeducation-estudiantes-postgres
-cd ../
+docker build -t ncarcamo/topeducation-estudiantes-postgres .
+docker push ncarcamo/topeducation-estudiantes-postgres
+cd..
 
-cd backend-cuotas-service
+cd topEduCuotas
 mvn clean install -DskipTests=True
-docker build -t simonsaez/topeducation-cuotas-postgres .
-docker push simonsaez/topeducation-cuotas-postgres
-cd ../
+docker build -t ncarcamo/topeducation-cuotas-postgres .
+docker push ncarcamo/topeducation-cuotas-postgres
+cd..
 
-cd frontend-service
-docker build -t simonsaez/topeducation-frontend-postgres .
-docker push simonsaez/topeducation-frontend-postgres
-cd ../
+cd frontend-topeducation
+docker build -t ncarcamo/topeducation-frontend-postgres .
+docker push ncarcamo/topeducation-frontend-postgres
+cd..
 
 
 ---------------------------------------------------------
@@ -43,7 +43,7 @@ cd ../
 minikube start
 minikube status
 
-cd Minikube
+cd minikube
 
 kubectl apply -f frontend-deployment-service.yml
 
