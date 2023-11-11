@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-estudiantes-deployment
+  labels:
+    app: backend-estudiantes-deployment
+spec:
+  selector:
+    matchLabels:
+      app: backend-estudiantes-deployment
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: backend-estudiantes-deployment
+    spec:
+      containers:
+        - name: topeducation-estudiantes-postgres
+          image: ncarcamo/topeducation-estudiantes-postgres:latest
+          ports:
+            - containerPort: 9001
+          env:
+            - name: SPRING_CLOUD_CONFIG_URI
+              value: http://configService:9001
+            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+              value: http://eurekaService:8761
+            - name: eureka.instance.preferIpAddress
+              value: "true"
+            - name: POSTGRES_DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-config-map
+                  key: POSTGRES_DB_HOST
+            - name: POSTGRES_DB_ESTUDIANTES
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-config-map
+                  key: POSTGRES_DB_ESTUDIANTES
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: POSTGRES_USER
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: POSTGRES_PASSWORD
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: topEduEstudiantes
+  labels:
+    app: topEduEstudiantes
+spec:
+  selector:
+    app: backend-estudiantes-deployment
+  ports:
+    - protocol: TCP
+      port: 9002
+      targetPort: 9002
+  type: LoadBalancer

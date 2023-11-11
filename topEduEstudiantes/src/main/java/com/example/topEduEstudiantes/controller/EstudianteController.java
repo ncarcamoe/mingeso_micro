@@ -28,13 +28,13 @@ public class EstudianteController {
         return ResponseEntity.ok(estudianteEntities);
     }
 
-    @GetMapping("/{rut}")
+    @GetMapping("/rut/{rut}")
     public ResponseEntity<EstudianteEntity> findByRut(@PathVariable("rut") String rut) {
         EstudianteEntity estudianteEntity = estudianteService.findByRut(rut);
         return ResponseEntity.ok(estudianteEntity);
     }
 
-    @GetMapping("/{idEstudiante}")
+    @GetMapping("/id/{idEstudiante}")
     public ResponseEntity<EstudianteEntity> findByIdEstudiante(@PathVariable("idEstudiante") Long idEstudiante) {
         EstudianteEntity estudianteEntity = estudianteService.findByIdEstudiante(idEstudiante);
         return ResponseEntity.ok(estudianteEntity);
