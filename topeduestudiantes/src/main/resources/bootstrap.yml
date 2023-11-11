@@ -25,8 +25,21 @@ spring:
     driver-class-name: org.postgresql.Driver
     dbname: topeduestudiantes
     url: jdbc:postgresql://${POSTGRES_DB_HOST}:5432/${POSTGRES_DB_ESTUDIANTES}?useSSL=false
-    #url: jdbc:postgresql://localhost:8090/topeduestudiantes
     username: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
     hikari:
       initialization-fail-timeout: 0
+      
+      
+#local
+#  datasource:
+#    plataform: postgres
+#    driver-class-name: org.postgresql.Driver
+#    dbname: topeduestudiantes
+#    url: jdbc:postgresql://localhost:8090/topeduestudiantes
+#    username: postgres
+#    password: usach2023
+#  servlet:
+#    multipart:
+#      max-file-size: 5MB
+#      max-request-size: 10MB

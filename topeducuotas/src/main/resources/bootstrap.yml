@@ -24,6 +24,18 @@ spring:
     plataform: postgres
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://${POSTGRES_DB_HOST}:5432/${POSTGRES_DB_CUOTAS}?useSSL=false
-    #url: jdbc:postgresql://localhost:8090/topeducuotas
     username: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
+    
+#local
+#  datasource:
+#    plataform: postgres
+#    driver-class-name: org.postgresql.Driver
+#    dbname: topeducuotas
+#    url: jdbc:postgresql://localhost:8090/topeducuotas
+#    username: postgres
+#    password: usach2023
+#  servlet:
+#    multipart:
+#      max-file-size: 5MB
+#      max-request-size: 10MB
