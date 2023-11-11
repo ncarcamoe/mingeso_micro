@@ -3,7 +3,7 @@ spring:
     restart:
       aditional-paths: src/main/java
   application:
-    name: topEduEstudiantes
+    name: topeduestudiantes
   jpa:
     database: POSTGRESQL
     show-sql: true
