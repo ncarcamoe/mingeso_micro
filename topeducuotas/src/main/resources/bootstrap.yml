@@ -1,3 +1,9 @@
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka-service:8761/eureka/
 spring:
   devtools:
     restart:
@@ -5,7 +11,8 @@ spring:
   application:
     name: topeducuotas
   jpa:
-    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgresPlusDialect
+    generate-ddl: true
     show-sql: true
     hibernate:
       ddl-auto: create
@@ -16,12 +23,7 @@ spring:
   datasource:
     plataform: postgres
     driver-class-name: org.postgresql.Driver
-    dbname: topeducuotas
-    #url: jdbc:postgresql://localhost:5432/topEducationCuotas
-    url: jdbc:postgresql://localhost:8090/topeducuotas
-    username: postgres
-    password: usach2023
-  servlet:
-    multipart:
-      max-file-size: 5MB
-      max-request-size: 10MB
+    url: jdbc:postgresql://${POSTGRES_DB_HOST}:5432/${POSTGRES_DB_CUOTAS}?useSSL=false
+    #url: jdbc:postgresql://localhost:8090/topeducuotas
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
