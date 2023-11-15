@@ -2,6 +2,8 @@ package com.example.topEduCuotas.entity;
 
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,6 +25,7 @@ public class ArancelEntity {
     private Integer valor;
     private Short anio;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "arancel", cascade = CascadeType.ALL)
     private Set<CuotaEntity> cuota = new HashSet<>();
 

@@ -16,14 +16,14 @@ spec:
     spec:
       containers:
         - name: topeducation-cuotas-postgres
-          image: simonsaez/topeducation-cuotas-postgres:latest
+          image: ncarcamo/topeducation-cuotas-postgres:latest
           ports:
-            - containerPort: 8081
+            - containerPort: 9001
           env:
             - name: SPRING_CLOUD_CONFIG_URI
-              value: http://backend-config-service:8081
+              value: http://config-service:9001
             - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
-              value: http://backend-eureka-service:8761
+              value: http://eureka-service:8761
             - name: eureka.instance.preferIpAddress
               value: "true"
             - name: POSTGRES_DB_HOST
@@ -58,6 +58,6 @@ spec:
     app: backend-cuotas-deployment
   ports:
     - protocol: TCP
-      port: 8083
-      targetPort: 8083
+      port: 9003
+      targetPort: 9003
   type: LoadBalancer  

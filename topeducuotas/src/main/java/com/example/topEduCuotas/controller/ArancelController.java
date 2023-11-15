@@ -12,26 +12,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+//@CrossOrigin(origins = {"http://localhost:3000"}, allowCredentials = "true")
 @RequestMapping("/arancel")
 public class ArancelController {
     @Autowired
 	ArancelService arancelService;
 
 	@PostMapping()
-	public ResponseEntity<ArancelEntity> crear(@RequestBody ArancelEntity colegio) {
-		arancelService.guardar(colegio);
-		return ResponseEntity.ok(colegio);
+	public ResponseEntity<ArancelEntity> crear(@RequestBody ArancelEntity arancel) {
+		arancelService.guardar(arancel);
+		return ResponseEntity.ok(arancel);
 	}
 
 	@GetMapping("/")
 	public ResponseEntity<List<ArancelEntity>> listar() {
-		List<ArancelEntity> colegioEntities = arancelService.findAll();
-		return ResponseEntity.ok(colegioEntities);
+		List<ArancelEntity> arancelEntities = arancelService.findAll();
+		return ResponseEntity.ok(arancelEntities);
 	}
 
 	@GetMapping("/{id}")
 	public ResponseEntity<ArancelEntity> findById(@PathVariable("id") Long id) {
-		ArancelEntity colegioEntity = arancelService.findById(id);
-		return ResponseEntity.ok(colegioEntity);
+		ArancelEntity arancelEntity = arancelService.findById(id);
+		return ResponseEntity.ok(arancelEntity);
 	}
 }

@@ -56,6 +56,7 @@ public class CuotaService {
 
     /**Necesito arancel, numero de cuotas y el idestudiante**/
     public ArrayList<CuotaEntity> generarCuotas(CuotaEntity cuota) {
+        System.out.println("Estudiante: "+ cuota.toString());
         EstudianteEntity estudiante = findByIdEstudiante(cuota.getIdEstudiante());
         Integer arancel = cuota.getArancel().getValor();
         Integer descuento = generarDescuento(arancel,estudiante.getColegio().getTipoColegio().getPorcDescuento());
@@ -107,11 +108,13 @@ public class CuotaService {
     public EstudianteEntity findByIdEstudiante(Long id){
         System.out.println("idEstudiante: "+id);
         ResponseEntity<EstudianteEntity> response = restTemplate.exchange(
-                "http://localhost:9000/estudiante/id/"+id,
+                //"http://localhost:9000/estudiante/id/"+id,
+                "http://34.41.239.179:9000/estudiante/id/"+id,
                 HttpMethod.GET,
                 null,
                 new ParameterizedTypeReference<EstudianteEntity>() {}
         );
+        System.out.println("Estudiante: "+ response.getBody().toString());
         return response.getBody();
     }
     /*

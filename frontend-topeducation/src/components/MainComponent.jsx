@@ -1,6 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Estudiantes from "../images/estudiantes.png"
+import Estudiantes from "../images/estudiante.png"
+import Arancel from "../images/Arancel.png"
+import Colegio from "../images/colegio.png"
+import TipoColegio from "../images/TipoColegio.png"
 import "../styles/main.css";
 import "../styles/listas.css";
 import "../styles/subir_excel.css";
@@ -19,38 +22,27 @@ function MainComponents() {
     const handleClickListaEstudiantes = () => {
         navigate("/estudiantes");
     };
-    const handleClickGenerarCuotas = () => {
-        navigate("/generar_cuotas");
-    };
-    const handleClickListaCuotas = () => {
-        navigate("/lista_cuotas");
+    const handleClickListaAranceles = () => {
+        navigate("/aranceles");
     };
     return (
         <div>
             <div className="container_main">
                 <div className="card" onClick={handleClickListaTipoColegios}>
-                    <img id="tipoColegios" src={Estudiantes} alt="Imagen_1" />
+                    <img id="tipoColegios" src={TipoColegio} alt="Imagen_1" />
                     <h2>Tipos de colegios</h2>
                 </div>
                 <div className="card" onClick={handleClickListaColegios}>
-                    <img id="colegios" src={Estudiantes} alt="Imagen_1" />
+                    <img id="colegios" src={Colegio} alt="Imagen_1" />
                     <h2>Colegios</h2>
                 </div>
                 <div className="card" onClick={handleClickListaEstudiantes}>
                     <img id="estudiantes" src={Estudiantes} alt="Imagen_1" />
                     <h2>Estudiantes</h2>
                 </div>
-                <div className="card" onClick={handleClickListaEstudiantes}>
-                    <img id="lista_estudiantes" src={Estudiantes} alt="Imagen_1" />
+                <div className="card" onClick={handleClickListaAranceles}>
+                    <img id="aranceles" src={Arancel} alt="Imagen_1" />
                     <h2>Aranceles</h2>
-                </div>
-                <div className="card" onClick={handleClickGenerarCuotas}>
-                    <img id="generar_cuotas" src={Estudiantes} alt="Imagen_1" />
-                    <h2>Generar Cuotas</h2>
-                </div>
-                <div className="card" onClick={handleClickListaCuotas}>
-                    <img id="lista_cuotas" src={Estudiantes} alt="Imagen_1" />
-                    <h2>Listado de Cuotas</h2>
                 </div>
             </div>
         </div>

@@ -9,7 +9,10 @@ import CreateColegioComponent from './components/CreateColegioComponent';
 import ViewColegioComponent from './components/ViewColegioComponent';
 import ListEstudianteComponent from './components/ListEstudianteComponent';
 import CreateEstudianteComponent from './components/CreateEstudianteComponent';
-import ViewEstudianteComponent from './components/ViewEstudianteComponent';
+import ViewCuotaComponent from './components/ViewCuotaComponent';
+import ListArancelComponent from './components/ListArancelComponent';
+import CreateArancelComponent from './components/CreateArancelComponent';
+import ViewArancelComponent from './components/ViewArancelComponent';
 import MainComponent from './components/MainComponent';
 
 function App() {
@@ -19,7 +22,7 @@ function App() {
         <header>
           <nav className="navbar navbar-expand-md navbar-dark bg-dark">
               <div className="container">
-                  <Link to="/" className="navbar-brand">Top Education</Link>
+                  <Link to="/" className="navbar-brand">Inicio</Link>
               </div>
           </nav>
         </header>
@@ -34,7 +37,10 @@ function App() {
             <Route path="/view-colegio/:id" element={<ViewColegioComponent />} />
             <Route path="/estudiantes" element={<ListEstudianteComponent/>} />
             <Route path="/add-estudiante" element={<CreateEstudianteComponent />} />
-            <Route path="/view-estudiante/:id" element={<ViewEstudianteComponent />} />
+            <Route path="/view-cuota/:id" element={<ViewCuotaComponent />} />
+            <Route path="/aranceles" element={<ListArancelComponent/>} />
+            <Route path="/add-arancel" element={<CreateArancelComponent />} />
+            <Route path="/view-arancel/:id" element={<ViewArancelComponent />} />
           </Routes>
         </div>
       </Router>

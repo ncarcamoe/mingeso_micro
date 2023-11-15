@@ -9,23 +9,32 @@ spring:
     restart:
       aditional-paths: src/main/java
   application:
+#    name: topeducuotaslocal
     name: topeducuotas
   jpa:
     database-platform: org.hibernate.dialect.PostgresPlusDialect
     generate-ddl: true
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
+#  jpa:
+#    database: POSTGRESQL
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
   cloud:
     config:
       enabled: true
       uri: http://localhost:9001
+#k8s
   datasource:
     plataform: postgres
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://${POSTGRES_DB_HOST}:5432/${POSTGRES_DB_CUOTAS}?useSSL=false
     username: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
+    hikari:
+      initialization-fail-timeout: 0
     
 #local
 #  datasource:

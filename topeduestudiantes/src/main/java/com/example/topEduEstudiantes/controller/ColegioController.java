@@ -11,6 +11,7 @@ import com.example.topEduEstudiantes.service.ColegioService;
 import java.util.List;
 
 @Controller
+//@CrossOrigin(origins = "*", allowCredentials = "true", allowedHeaders = "*")
 @RequestMapping("/colegio")
 public class ColegioController {
     @Autowired

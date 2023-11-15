@@ -1,24 +1,24 @@
-import axios from 'axios';
+import axios from "axios";
 
-const COLEGIO_API_URL = "http://localhost:9000/colegio/";
+//local
+const COLEGIO_API_URL = "http://34.41.239.179:9000/colegio/";
+
+//k8s
+//const COLEGIO_API_URL = "http://gateway-service:9000/colegio/";
 
 class ColegioService {
+  getColegios() {
+    return axios.get(COLEGIO_API_URL);
+  }
 
-    getColegios(){
-        return axios.get(COLEGIO_API_URL);
-    }
+  createColegio(colegio) {
+    return axios.post(COLEGIO_API_URL, colegio);
+  }
 
-    createColegio(colegio){
-        return axios.post(COLEGIO_API_URL, colegio);
-    }
+  getColegioById(colegioId) {
+    return axios.get(COLEGIO_API_URL + "/" + colegioId);
+  }
 
-    getColegioById(colegioId){
-        return axios.get(COLEGIO_API_URL + '/' + colegioId);
-    }
-
-    getColegioByRut(colegioRut){
-        return axios.get(COLEGIO_API_URL + '/' + colegioRut);
-    }
 }
 
-export default new ColegioService()
+export default new ColegioService();
